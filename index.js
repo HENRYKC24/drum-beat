@@ -35,13 +35,18 @@ function runSwitch( letter ) {
 }
 
 function changeTextColor( letter ) {
-  for( var i = 0; i < allButtons.length; i++ ) {
-    if ( allButtons[i].textContent !== letter ) {
-      allButtons[i].style.color = '#DA0463';
-    } else {
-      allButtons[i].style.color = '#fff';
-    }
-  };
+  // for( var i = 0; i < allButtons.length; i++ ) {
+  //   if ( allButtons[i].textContent !== letter ) {
+  //     allButtons[i].style.border = '10px solid #404B69';
+  //   } else {
+  //     allButtons[i].style.border = '10px solid rgb(70, 150, 34)';
+  //   }
+  // };
+  var pressedButton = document.querySelector('.' + letter);
+  pressedButton.classList.add('pressed');
+  setTimeout(function(){
+    pressedButton.classList.remove('pressed');
+  }, 100);
 }
 var allButtons = document.querySelectorAll('button');
 var pressedKey;

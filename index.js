@@ -47,7 +47,11 @@ var allButtons = document.querySelectorAll('button');
 var pressedKey;
 document.addEventListener('keypress', function(event) {
   var letter = event.key.toLowerCase();
+  console.log(letter);
   changeTextColor(letter);
+  if (letter === 'Enter') {
+    letter = 'b';
+  }
   runSwitch(letter);
 })
 for( var i = 0; i < allButtons.length; i++ ) {

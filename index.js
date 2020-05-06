@@ -28,25 +28,19 @@ function runSwitch( letter ) {
       var kick = new Audio('sounds/kick.mp3');
       kick.play();
       break;
-    default:
-      var tom1 = new Audio('sounds/tom-1.mp3');
-      tom1.play();
   };
 }
 
 function changeTextColor( letter ) {
-  // for( var i = 0; i < allButtons.length; i++ ) {
-  //   if ( allButtons[i].textContent !== letter ) {
-  //     allButtons[i].style.border = '10px solid #404B69';
-  //   } else {
-  //     allButtons[i].style.border = '10px solid rgb(70, 150, 34)';
-  //   }
-  // };
-  var pressedButton = document.querySelector('.' + letter);
-  pressedButton.classList.add('pressed');
-  setTimeout(function(){
-    pressedButton.classList.remove('pressed');
-  }, 100);
+  
+  let functionalKeys = ['a', 's', 'd', 'f', 'j', 'k', 'l'];
+  if (functionalKeys.includes(letter)) {
+    var pressedButton = document.querySelector('.' + letter);
+    pressedButton.classList.add('pressed');
+    setTimeout(function(){
+      pressedButton.classList.remove('pressed');
+    }, 100);
+  }
 }
 var allButtons = document.querySelectorAll('button');
 var pressedKey;
